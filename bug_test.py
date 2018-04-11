@@ -17,7 +17,9 @@ def get_page(url):
 
 def parse_page(html):
     # 正则表达式解析
-    pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)".*?name"><a.*?>(.*?)</a>.*?"star">(.*?)</p>.*?releasetime">(.*?)</p>.*?integer">(.*?)</i>.*?fraction">(.*?)</i>.*?</dd>', re.S)
+    pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)".*?name">'
+    + '<a.*?>(.*?)</a>.*?"star">(.*?)</p>.*?releasetime">(.*?)</p>.*?integer">(.*?)</i>'
+    + '.*?fraction">(.*?)</i>.*?</dd>', re.S)
     items = re.findall(pattern, html)
     # yield items
 
